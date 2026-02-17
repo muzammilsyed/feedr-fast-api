@@ -1,0 +1,8 @@
+# Uploaded media (user content - don't commit)
+uploads/
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.env
