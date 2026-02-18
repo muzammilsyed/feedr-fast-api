@@ -35,7 +35,7 @@ services:
       - DATABASE_URL=postgresql+asyncpg://pixer_user:pixer_password@postgres:5432/pixer_db
       - REDIS_URL=redis://redis:6379/0
       - CELERY_BROKER_URL=redis://redis:6379/0
-      - JWT_SECRET_KEY=your-secret-key-change-in-production
+      - JWT_SECRET_KEY=2rt2UV4drlLb_s_a92hOjZPa-LwiVT4Zzfe01WuyvWE
     depends_on:
       postgres:
         condition: service_healthy
