@@ -26,7 +26,7 @@ class Settings(BaseSettings):
 
     # Local file storage (upload dir relative to backend root)
     UPLOAD_DIR: str = "uploads"
-    MEDIA_BASE_URL: str = "https://api.astrix.in"
+    MEDIA_BASE_URL: str = "http://167.71.239.70"
 
     # File storage (MinIO/S3) - for future bucket switch
     S3_ENDPOINT_URL: str | None = "http://localhost:9000"
