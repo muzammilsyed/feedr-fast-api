@@ -70,8 +70,12 @@ async def create_clip_endpoint(
     await db.refresh(clip)
     clip.user = current_user
     if clip.video_url:
-        process_video_upload.delay(str(clip.id), clip.video_url)
-        generate_thumbnail.delay(str(clip.id), clip.video_url)
+        try:
+            process_video_upload.delay(str(clip.id), clip.video_url)
+            generate_thumbnail.delay(str(clip.id), clip.video_url)
+        except Exception as e:
+            print(f"[Clips] WARNING: Failed to enqueue background tasks: {e}")
+            # We don't raise here because the clip record itself was successfully created/committed
     return clip_to_response(clip)
 
 
